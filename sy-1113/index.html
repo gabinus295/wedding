@@ -1,334 +1,289 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>정성권 & 신예슬 결혼합니다</title>
-    
-    <!-- 검색 엔진 노출 차단 (링크가 있는 사람만 접속 가능) -->
-    <meta name="robots" content="noindex, nofollow, noarchive">
-    <meta name="googlebot" content="noindex, nofollow">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="googlebot" content="noindex, nofollow">
 
-    <!-- 카카오톡 / SNS 링크 공유 시 나타나는 미리보기 설정 (Open Graph) -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="정성권 ♥ 신예슬 결혼합니다">
-    <meta property="og:description" content="11월 13일 금요일 낮 12시, 가족 식사로 인사를 대신합니다.">
-    <meta property="og:image" content="DSC01187.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="정성권 ❤️ 신예슬 모바일 청첩장">
+  <meta property="og:description" content="2026년 11월 13일 금요일 낮 12시 | 롯데호텔 서울 피에르 가니에르">
+  <meta property="og:image" content="DSC01187.JPG">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Noto Serif KR for elegant typography -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <title>정성권 ❤️ 신예슬 모바일 청첩장</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Noto+Serif+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-color: #FAF8F5;
+      --card-bg: #FFFFFF;
+      --text-main: #2C2A29;
+      --text-sub: #66605C;
+      --accent-color: #8C7A6B;
+      --light-border: #E8E2DC;
+      --font-serif: 'Noto Serif KR', serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-en: 'Montserrat', sans-serif;
+    }
 
-    <!-- Custom Tailwind Configuration for Theme Colors -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'paper': '#fdfcf9',
-                        'paper-alt': '#f7f4ee',
-                        'beige-accent': '#c2b6a7',
-                        'text-main': '#3b3a38',
-                        'text-light': '#7a7671',
-                    },
-                    fontFamily: {
-                        'serif': ['"Noto Serif KR"', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #EFECE6;
+      font-family: var(--font-serif);
+      color: var(--text-main);
+      display: flex; justify-content: center; align-items: center;
+      min-height: 100vh; -webkit-font-smoothing: antialiased;
+    }
+    .mobile-container {
+      width: 100%; max-width: 430px; background-color: var(--bg-color);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); position: relative; overflow: hidden;
+    }
+    section { padding: 60px 24px; text-align: center; border-bottom: 1px solid rgba(232, 226, 220, 0.5); }
+    .section-title {
+      font-family: var(--font-en); font-size: 13px; letter-spacing: 4px;
+      color: var(--accent-color); text-transform: uppercase; margin-bottom: 24px; font-weight: 500;
+    }
 
-    <style>
-        /* Smooth scrolling and basic reset */
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            background-color: #e5e5e5; /* Darker background for desktop to make the card pop */
-            font-family: 'Noto Serif KR', serif;
-            color: #3b3a38;
-            line-height: 1.6;
-        }
-        /* Fade In Animation classes */
-        .fade-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        .fade-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        /* Custom scrollbar for gallery if needed, but we use grid here */
-        .accordion-content {
-            transition: max-height 0.3s ease-out, padding 0.3s ease;
-            max-height: 0;
-            overflow: hidden;
-            padding-top: 0;
-            padding-bottom: 0;
-        }
-        .accordion-content.open {
-            max-height: 200px; /* arbitrary max height for animation */
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-        }
-        .accordion-icon {
-            transition: transform 0.3s ease;
-        }
-        .accordion-icon.open {
-            transform: rotate(180deg);
-        }
-        
-        /* Toast notification for copy */
-        #toast {
-            visibility: hidden;
-            min-width: 200px;
-            margin-left: -100px;
-            background-color: rgba(59, 58, 56, 0.9);
-            color: #fff;
-            text-align: center;
-            border-radius: 8px;
-            padding: 12px;
-            position: fixed;
-            z-index: 50;
-            left: 50%;
-            bottom: 30px;
-            font-size: 14px;
-            opacity: 0;
-            transition: opacity 0.3s, visibility 0.3s;
-        }
-        #toast.show {
-            visibility: visible;
-            opacity: 1;
-        }
-    </style>
+    /* Hero */
+    .hero { padding: 0; position: relative; }
+    .hero-image-wrapper { width: 100%; height: 480px; overflow: hidden; position: relative; }
+    .hero-image-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-text { padding: 40px 20px 50px; background-color: var(--bg-color); }
+    .hero-subtitle { font-family: var(--font-en); font-size: 12px; letter-spacing: 3px; color: var(--accent-color); margin-bottom: 12px; }
+    .hero-names { font-size: 24px; font-weight: 400; letter-spacing: 2px; margin-bottom: 20px; color: var(--text-main); }
+    .hero-date-location { font-size: 14px; color: var(--text-sub); line-height: 1.8; font-weight: 300; }
+
+    /* Greeting */
+    .greeting-text { font-size: 14.5px; line-height: 2.1; color: var(--text-main); font-weight: 300; word-break: keep-all; }
+    .greeting-highlight { margin-top: 24px; padding-top: 24px; border-top: 1px dashed var(--light-border); color: var(--accent-color); font-size: 14px; line-height: 1.9; }
+    .couple-names-block { margin-top: 36px; font-size: 16px; line-height: 2; }
+    .couple-names-block strong { font-weight: 500; }
+    .greeting-sub-image { width: 100%; border-radius: 4px; margin-top: 32px; object-fit: cover; }
+
+    /* Details */
+    .detail-card { background: var(--card-bg); padding: 30px 20px; border-radius: 8px; border: 1px solid var(--light-border); }
+    .detail-item { margin-bottom: 20px; }
+    .detail-item:last-child { margin-bottom: 0; }
+    .detail-label { font-family: var(--font-en); font-size: 11px; letter-spacing: 2px; color: var(--accent-color); margin-bottom: 6px; }
+    .detail-val { font-size: 16px; font-weight: 400; color: var(--text-main); }
+    .detail-sub { font-size: 13.5px; color: var(--text-sub); margin-top: 8px; }
+
+    /* Gallery */
+    .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .gallery-item { position: relative; width: 100%; padding-top: 133%; overflow: hidden; border-radius: 4px; background-color: #E8E2DC; }
+    .gallery-item img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+    .gallery-item.full-width { grid-column: span 2; padding-top: 66%; }
+
+    /* Account */
+    .account-accordion { background: var(--card-bg); border-radius: 8px; border: 1px solid var(--light-border); overflow: hidden; margin-top: 16px; }
+    .accordion-header { padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 14.5px; font-weight: 400; background-color: #FCFBF9; user-select: none; }
+    .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; background-color: var(--card-bg); }
+    .account-box { padding: 16px 20px; border-top: 1px solid var(--light-border); display: flex; justify-content: space-between; align-items: center; text-align: left; }
+    .account-details { font-size: 13.5px; line-height: 1.6; }
+    .account-details .bank { font-weight: 500; color: var(--text-main); }
+    .account-details .number { font-family: var(--font-sans); color: var(--text-sub); margin-top: 4px;}
+    .copy-btn { padding: 6px 12px; font-size: 12px; font-family: var(--font-sans); background-color: var(--bg-color); border: 1px solid var(--light-border); border-radius: 4px; cursor: pointer; color: var(--text-main); }
+
+    /* Footer & Toast */
+    footer { padding: 40px 20px; text-align: center; font-size: 12px; color: var(--accent-color); font-family: var(--font-en); letter-spacing: 2px; }
+    .toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px); background-color: rgba(44, 42, 41, 0.9); color: #FFF; padding: 12px 24px; border-radius: 25px; font-size: 13px; font-family: var(--font-sans); opacity: 0; transition: all 0.3s ease; z-index: 1000; pointer-events: none; }
+    .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+  </style>
 </head>
-<body class="antialiased">
+<body>
 
-    <!-- Mobile Container (Max width 480px, centered on desktop like an app) -->
-    <main class="max-w-[480px] mx-auto bg-paper min-h-screen shadow-2xl relative overflow-hidden">
+  <div class="mobile-container">
+    
+    <!-- 1. 메인 섹션 -->
+    <section class="hero">
+      <div class="hero-image-wrapper">
+        <img src="DSC01187.JPG" alt="메인 사진">
+      </div>
+      <div class="hero-text">
+        <div class="hero-subtitle">WEDDING INVITATION</div>
+        <div class="hero-names">정성권 &nbsp;|&nbsp; 신예슬</div>
+        <div class="hero-date-location">
+          2026년 11월 13일 금요일 낮 12:00<br>
+          롯데호텔 서울 피에르 가니에르
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 초대 인사말 섹션 -->
+    <section>
+      <div class="section-title">INVITATION</div>
+      <div class="greeting-text">
+        함께하는 소소한 일상 속에서<br>
+        더 큰 행복을 찾아가는 두 사람이<br>
+        이제 하나의 결실을 맺으려 합니다.<br><br>
         
-        <!-- 1. Main Cover -->
-        <header class="relative w-full h-[70vh] bg-gray-100 flex flex-col justify-end">
-            <!-- Image fits the area, using object-cover -->
-            <img src="DSC01187.jpg" alt="정성권과 신예슬, 그리고 반려견" class="absolute inset-0 w-full h-full object-cover" onerror="this.src='https://placehold.co/480x800/d4c8b8/ffffff?text=Main+Photo'">
-            
-            <!-- Soft gradient overlay to make text readable -->
-            <div class="absolute inset-0 bg-gradient-to-t from-paper via-transparent to-transparent opacity-90 h-full"></div>
-            
-            <div class="relative z-10 pb-16 text-center fade-up">
-                <p class="text-beige-accent tracking-widest text-sm mb-4">WEDDING INVITATION</p>
-                <h1 class="text-3xl font-light text-text-main tracking-widest mb-6">
-                    정성권 <span class="text-lg mx-2 italic text-beige-accent">&</span> 신예슬
-                </h1>
-                <p class="text-text-light tracking-widest text-sm">2026. 11. 13</p>
+        앞으로 귀여운 개와 고양이와 함께<br>
+        따뜻한 온기를 나누며 살겠습니다.<br>
+        시간이 날 때마다 코트 위에서 신나게 테니스도 치며,<br>
+        건강하고 활기찬 매일을 가꾸어 가겠습니다.<br><br>
+
+        화려한 예식 대신 양가 가족분들을 모시고<br>
+        정성 어린 식사 한 끼를 나누며<br>
+        소박하지만 깊은 뜻을 새기고자 합니다.
+      </div>
+
+      <div class="greeting-highlight">
+        저희의 첫걸음을 곁에서 축복해 주시는<br>
+        가족분들의 따뜻한 마음을 잊지 않고<br>
+        서로 아끼며 행복하게 잘 살겠습니다.
+      </div>
+
+      <div class="couple-names-block">
+        <div style="margin-bottom: 12px;">
+          <strong>정준철 · 임형선</strong> <span style="font-size: 14px; color: var(--text-sub);">의 아들</span> <strong>성권</strong>
+        </div>
+        <div>
+          <strong>신상호 · 송미숙</strong> <span style="font-size: 14px; color: var(--text-sub);">의 딸</span> <strong>예슬</strong>
+        </div>
+      </div>
+
+      <img src="DSC01576.JPG" alt="인사말 사진" class="greeting-sub-image">
+    </section>
+
+    <!-- 3. 예식 안내 섹션 -->
+    <section>
+      <div class="section-title">DATE & VENUE</div>
+      <div class="detail-card">
+        <div class="detail-item">
+          <div class="detail-label">DATE</div>
+          <div class="detail-val">2026년 11월 13일 금요일</div>
+          <div class="detail-sub">낮 12:00 (정오)</div>
+        </div>
+        <hr style="border: 0; border-top: 1px solid var(--light-border); margin: 20px 0;">
+        <div class="detail-item">
+          <div class="detail-label">LOCATION</div>
+          <div class="detail-val">롯데호텔 서울 피에르 가니에르</div>
+          <div class="detail-sub">가족분들만 모시고 조촐한 식사 자리를 가집니다.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 20장 갤러리 섹션 -->
+    <section>
+      <div class="section-title">GALLERY</div>
+      <div class="gallery-grid">
+        <!-- 1~4 -->
+        <div class="gallery-item full-width"><img src="DSC01187_2.JPG" alt="사진"></div>
+        <div class="gallery-item"><img src="DSC00938.JPG" alt="사진"></div>
+        <div class="gallery-item"><img src="DSC01570.JPG" alt="사진"></div>
+        
+        <!-- 5~8 -->
+        <div class="gallery-item"><img src="DSC00834_2.JPG" alt="사진"></div>
+        <div class="gallery-item"><img src="DSC01247_2.JPG" alt="사진"></div>
+        <div class="gallery-item full-width"><img src="DSC01886.JPG" alt="사진"></div>
+        
+        <!-- 9~12 -->
+        <div class="gallery-item"><img src="DSC01517.JPG" alt="사진"></div>
+        <div class="gallery-item"><img src="DSC00677_2.JPG" alt="사진"></div>
+        <div class="gallery-item"><img src="DSC00746.JPG" alt="사진"></div>
+        <div class="gallery-item"><img src="DSC01042_2.JPG" alt="사진"></div>
+
+        <!-- 13~16 -->
+        <div class="gallery-item full-width"><img src="DSC01270.JPG" alt="사진"></div>
+        <div class="gallery-item"><img src="DSC00677.JPG" alt="사진"></div>
+        <div class="gallery-item"><img src="DSC01258.JPG" alt="사진"></div>
+        
+        <!-- 17~20 -->
+        <div class="gallery-item"><img src="DSC01247.JPG" alt="사진"></div>
+        <div class="gallery-item"><img src="DSC00941.JPG" alt="사진"></div>
+        <div class="gallery-item full-width"><img src="DSC01042.JPG" alt="사진"></div>
+        <div class="gallery-item"><img src="DSC01210.JPG" alt="사진"></div>
+        <div class="gallery-item"><img src="DSC00834.JPG" alt="사진"></div>
+      </div>
+    </section>
+
+    <!-- 5. 마음 전하실 곳 섹션 -->
+    <section style="border-bottom: none;">
+      <div class="section-title">ACCOUNT</div>
+      <div style="font-size: 14px; color: var(--text-sub); line-height: 1.8; margin-bottom: 20px;">
+        축복해 주시는 따뜻한 마음 감사히 보관하겠습니다.
+      </div>
+
+      <!-- 신랑측 어머니 계좌 -->
+      <div class="account-accordion">
+        <div class="accordion-header" onclick="toggleAccordion('acc1')">
+          <span>신랑측 마음 전하실 곳</span>
+          <span id="arrow-acc1">▼</span>
+        </div>
+        <div class="accordion-content" id="acc1">
+          <div class="account-box">
+            <div class="account-details">
+              <div class="bank">SC제일은행 (임형선)</div>
+              <div class="number">251-20-264046</div>
             </div>
-        </header>
+            <button class="copy-btn" onclick="copyAccount('SC제일은행 251-20-264046')">복사</button>
+          </div>
+        </div>
+      </div>
 
-        <!-- 2. Greeting / Invitation Message -->
-        <section class="py-24 px-8 text-center bg-paper">
-            <h2 class="text-xl text-beige-accent tracking-[0.2em] mb-12 fade-up">초대합니다</h2>
-            
-            <div class="space-y-8 text-[15px] leading-[2.2] text-text-main font-light fade-up">
-                <p>
-                    형식적인 결혼식 대신<br>
-                    양가 가족분들을 모시고<br>
-                    따뜻한 식사 자리로 인사를 대신하고자 합니다.
-                </p>
-                <p>
-                    앞으로 저희 곁을 지켜주는<br>
-                    리트리버, 고양이와 함께<br>
-                    테니스도 열심히 치면서<br>
-                    건강하고 행복하게 잘 살겠습니다.
-                </p>
-                <p>
-                    축하해 주시는 모든 분들께<br>
-                    진심으로 감사드립니다.
-                </p>
+      <!-- 신부측 어머니 계좌 -->
+      <div class="account-accordion">
+        <div class="accordion-header" onclick="toggleAccordion('acc2')">
+          <span>신부측 마음 전하실 곳</span>
+          <span id="arrow-acc2">▼</span>
+        </div>
+        <div class="accordion-content" id="acc2">
+          <div class="account-box">
+            <div class="account-details">
+              <div class="bank">농협 (송미숙)</div>
+              <div class="number">237134-52-205696</div>
             </div>
-        </section>
+            <button class="copy-btn" onclick="copyAccount('농협 23713452205696')">복사</button>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- 3. Sub Image -->
-        <section class="pb-20 px-4 bg-paper fade-up">
-            <div class="aspect-[3/4] overflow-hidden rounded-sm w-full shadow-sm">
-                <img src="DSC01576.jpg" alt="테니스 사진" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/480x640/e0e0e0/888888?text=Tennis+Photo'">
-            </div>
-        </section>
+    <footer>
+      THANK YOU FOR CELEBRATING WITH US
+    </footer>
+  </div>
 
-        <!-- 4. Event Details & Navigation Links -->
-        <section class="py-20 px-8 text-center bg-paper-alt">
-            <h2 class="text-xl text-beige-accent tracking-[0.2em] mb-10 fade-up">예식 안내</h2>
-            
-            <div class="fade-up space-y-6">
-                <div>
-                    <p class="font-medium text-lg text-text-main mb-1">2026년 11월 13일 금요일 낮 12시</p>
-                </div>
-                <div class="pb-4">
-                    <p class="font-medium text-text-main mb-1">롯데호텔 서울 피에르 가니에르</p>
-                    <p class="text-sm text-text-light">서울 중구 을지로 30 롯데호텔 서울 Executive Tower 35층</p>
-                </div>
+  <div id="toast" class="toast">계좌번호가 복사되었습니다.</div>
 
-                <!-- Map Action Buttons -->
-                <div class="flex justify-center pt-2">
-                    <a href="https://map.kakao.com/link/search/롯데호텔서울 피에르가니에르" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-[#FEE500] text-[#191919] rounded-md text-[15px] font-medium shadow-sm hover:opacity-90 flex items-center gap-2 transition-opacity">
-                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.477 3 2 6.477 2 10.767c0 2.766 1.87 5.188 4.675 6.558-.205.748-.744 2.712-.852 3.129-.136.526.193.519.406.377.168-.112 2.684-1.824 3.766-2.56.657.095 1.332.146 2.005.146 5.523 0 10-3.477 10-7.767S17.523 3 12 3z"/></svg>
-                        오시는 길 보기
-                    </a>
-                </div>
-            </div>
-        </section>
+  <script>
+    function toggleAccordion(id) {
+      const content = document.getElementById(id);
+      const arrow = document.getElementById('arrow-' + id);
+      
+      if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+        content.style.maxHeight = '0px';
+        arrow.textContent = '▼';
+      } else {
+        content.style.maxHeight = content.scrollHeight + 'px';
+        arrow.textContent = '▲';
+      }
+    }
 
-        <!-- 5. Bank Account Section -->
-        <section class="py-24 px-6 bg-paper pb-32">
-            <h2 class="text-xl text-beige-accent tracking-[0.2em] mb-12 text-center fade-up">마음 전하실 곳</h2>
-            
-            <div class="space-y-4 fade-up">
-                <!-- Groom Accordion -->
-                <div class="border border-beige-accent/30 rounded-lg bg-white overflow-hidden shadow-sm">
-                    <button onclick="toggleAccordion('groom-acc', 'groom-icon')" class="w-full py-4 px-5 text-left flex justify-between items-center text-text-main focus:outline-none">
-                        <span class="tracking-wide text-[15px]">신랑측 계좌번호 보기</span>
-                        <svg id="groom-icon" class="w-5 h-5 text-beige-accent accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div id="groom-acc" class="accordion-content px-5 bg-paper/50 border-t border-beige-accent/10">
-                        <div class="flex justify-between items-center py-2">
-                            <div class="text-[14px]">
-                                <p class="text-text-main font-medium mb-1">우리은행 <span class="font-sans">1002-xxx-xxxxxx</span></p>
-                                <p class="text-text-light text-sm">예금주: 정성권</p>
-                            </div>
-                            <button onclick="copyToClipboard('우리은행 1002-xxx-xxxxxx')" class="px-4 py-1.5 bg-beige-accent/20 text-text-main rounded-full text-xs font-medium hover:bg-beige-accent/40 transition-colors">
-                                복사하기
-                            </button>
-                        </div>
-                    </div>
-                </div>
+    function copyAccount(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast();
+      }).catch(err => {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        showToast();
+      });
+    }
 
-                <!-- Bride Accordion -->
-                <div class="border border-beige-accent/30 rounded-lg bg-white overflow-hidden shadow-sm">
-                    <button onclick="toggleAccordion('bride-acc', 'bride-icon')" class="w-full py-4 px-5 text-left flex justify-between items-center text-text-main focus:outline-none">
-                        <span class="tracking-wide text-[15px]">신부측 계좌번호 보기</span>
-                        <svg id="bride-icon" class="w-5 h-5 text-beige-accent accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div id="bride-acc" class="accordion-content px-5 bg-paper/50 border-t border-beige-accent/10">
-                        <div class="flex justify-between items-center py-2">
-                            <div class="text-[14px]">
-                                <p class="text-text-main font-medium mb-1">국민은행 <span class="font-sans">9-xxxx-xxxx-xx</span></p>
-                                <p class="text-text-light text-sm">예금주: 신예슬</p>
-                            </div>
-                            <button onclick="copyToClipboard('국민은행 9-xxxx-xxxx-xx')" class="px-4 py-1.5 bg-beige-accent/20 text-text-main rounded-full text-xs font-medium hover:bg-beige-accent/40 transition-colors">
-                                복사하기
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="py-12 bg-paper text-center">
-            <p class="text-xs text-text-light tracking-widest font-sans">
-                &copy; 2026 SUNGKWON & YESEUL
-            </p>
-        </footer>
-
-    </main>
-
-    <!-- Toast Notification -->
-    <div id="toast">계좌번호가 복사되었습니다.</div>
-
-    <!-- Interactive Scripts -->
-    <script>
-        // 1. Scroll Fade-up Animation Observer
-        document.addEventListener("DOMContentLoaded", function() {
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.15 // Trigger when 15% of element is visible
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target); // Only animate once
-                    }
-                });
-            }, observerOptions);
-
-            const fadeElements = document.querySelectorAll('.fade-up');
-            fadeElements.forEach(el => observer.observe(el));
-            
-            // Trigger initial visible elements immediately
-            setTimeout(() => {
-                fadeElements.forEach(el => {
-                    const rect = el.getBoundingClientRect();
-                    if (rect.top < window.innerHeight) {
-                        el.classList.add('visible');
-                    }
-                });
-            }, 100);
-        });
-
-        // 2. Accordion Toggle Logic
-        function toggleAccordion(contentId, iconId) {
-            const content = document.getElementById(contentId);
-            const icon = document.getElementById(iconId);
-            
-            // Toggle current
-            if (content.classList.contains('open')) {
-                content.classList.remove('open');
-                icon.classList.remove('open');
-            } else {
-                content.classList.add('open');
-                icon.classList.add('open');
-            }
-        }
-
-        // 3. Copy to Clipboard Logic
-        function copyToClipboard(text) {
-            // Using a temporary textarea is the most robust cross-browser and iframe-safe method
-            const textArea = document.createElement("textarea");
-            textArea.value = text;
-            
-            // Avoid scrolling to bottom
-            textArea.style.top = "0";
-            textArea.style.left = "0";
-            textArea.style.position = "fixed";
-
-            document.body.appendChild(textArea);
-            textArea.focus();
-            textArea.select();
-
-            try {
-                const successful = document.execCommand('copy');
-                if (successful) {
-                    showToast();
-                } else {
-                    console.error('Fallback: Copying text command was unsuccessful');
-                }
-            } catch (err) {
-                console.error('Fallback: Oops, unable to copy', err);
-            }
-
-            document.body.removeChild(textArea);
-        }
-
-        // 4. Toast Notification Logic
-        function showToast() {
-            const toast = document.getElementById("toast");
-            toast.className = "show";
-            setTimeout(function(){ 
-                toast.className = toast.className.replace("show", ""); 
-            }, 2500); // Hide after 2.5 seconds
-        }
-    </script>
+    function showToast() {
+      const toast = document.getElementById('toast');
+      toast.classList.add('show');
+      setTimeout(() => { toast.classList.remove('show'); }, 2000);
+    }
+  </script>
 </body>
 </html>
