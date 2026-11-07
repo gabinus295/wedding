@@ -42,7 +42,7 @@
     .hero-text { padding: 40px 20px 50px; background-color: var(--bg-color); }
     .hero-subtitle { font-family: var(--font-en); font-size: 12px; letter-spacing: 3px; color: var(--accent-color); margin-bottom: 12px; }
     .hero-names { font-size: 24px; font-weight: 400; letter-spacing: 2px; margin-bottom: 20px; color: var(--text-main); }
-    .hero-date-location { font-size: 14px; color: var(--text-sub); line-height: 1.8; font-weight: 300; }
+    .hero-date-location { font-size: 14px; color: var(--text-sub); line-height: 1.8; font-weight: 300; word-break: keep-all; }
 
     .greeting-text { font-size: 14.5px; line-height: 2.1; color: var(--text-main); font-weight: 300; word-break: keep-all; }
     .greeting-highlight { margin-top: 24px; padding-top: 24px; border-top: 1px dashed var(--light-border); color: var(--accent-color); font-size: 14px; line-height: 1.9; }
@@ -91,7 +91,10 @@
       <div class="hero-text">
         <div class="hero-subtitle">Wedding Announcement</div>
         <div class="hero-names">정성권 &nbsp;|&nbsp; 신예슬</div>
-        <div class="hero-date-location">2026년 11월 부모님만 모시고 조촐한 식사 자리를 가집니다.</div>
+        <div class="hero-date-location">
+          2026년 11월, 양가 직계 가족만 모인 자리에서<br>
+          소중한 서약을 나누고 식사를 함께합니다.
+        </div>
       </div>
     </section>
 
@@ -122,7 +125,7 @@
         <hr style="border: 0; border-top: 1px solid var(--light-border); margin: 20px 0;">
         <div class="detail-item">
           <div class="detail-label">LOCATION</div>
-          <div class="detail-val" style="font-size: 14.5px;">11월 부모님만 모시고<br>조촐한 식사 자리를 가집니다.</div>
+          <div class="detail-val" style="font-size: 14.5px;">2026년 11월, 양가 직계 가족만 모인 자리에서<br>소중한 서약을 나누고 식사를 함께합니다.</div>
         </div>
       </div>
     </section>
@@ -153,7 +156,6 @@
         <div class="gallery-item"><img src="DSC01570.JPG" alt="16번 사진"></div>
         <div class="gallery-item"><img src="DSC01576.JPG" alt="17번 사진"></div>
         
-        <!-- 18, 19번째 사진을 작게 (기본 크기), 빈칸 방지를 위해 20번째를 크게 마무리 -->
         <div class="gallery-item"><img src="DSC01805.JPG" alt="18번 사진"></div>
         <div class="gallery-item"><img src="DSC01846.JPG" alt="19번 사진"></div>
         <div class="gallery-item full-width"><img src="DSC01886.JPG" alt="20번 사진"></div>
@@ -213,7 +215,6 @@
 
   <div id="toast" class="toast">계좌번호가 복사되었습니다.</div>
 
-  <!-- 모달 창 (사진 클릭 시 확대) -->
   <div id="imageModal" class="modal" onclick="closeModal()">
     <span class="close-btn">&times;</span>
     <img class="modal-content" id="expandedImg">
