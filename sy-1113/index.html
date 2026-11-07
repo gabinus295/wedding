@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- 검색 엔진 노출 차단 -->
   <meta name="robots" content="noindex, nofollow, noarchive">
   <meta name="googlebot" content="noindex, nofollow">
+  <!-- 카카오톡 / SNS 링크 공유 미리보기 -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="정성권 ❤️ 신예슬 모바일 청첩장">
   <meta property="og:description" content="2026년 11월 부모님만 모시고 조촐한 식사 자리를 가집니다.">
@@ -32,7 +34,7 @@
     body { background-color: #EFECE6; font-family: var(--font-serif); color: var(--text-main); display: flex; justify-content: center; align-items: center; min-height: 100vh; -webkit-font-smoothing: antialiased; }
     .mobile-container { width: 100%; max-width: 430px; background-color: var(--bg-color); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); position: relative; overflow: hidden; }
     section { padding: 60px 24px; text-align: center; border-bottom: 1px solid rgba(232, 226, 220, 0.5); }
-    .section-title { font-family: var(--font-en); font-size: 13px; letter-spacing: 4px; color: var(--accent-color); text-transform: uppercase; margin-bottom: 24px; font-weight: 500; }
+    .section-title { font-family: var(--font-en); font-size: 13px; letter-spacing: 3px; color: var(--accent-color); margin-bottom: 24px; font-weight: 500; }
 
     .hero { padding: 0; position: relative; }
     .hero-image-wrapper { width: 100%; height: 480px; overflow: hidden; position: relative; }
@@ -87,14 +89,14 @@
     <section class="hero">
       <div class="hero-image-wrapper"><img src="DSC01187.JPG" alt="메인 사진"></div>
       <div class="hero-text">
-        <div class="hero-subtitle">WEDDING INVITATION</div>
+        <div class="hero-subtitle">Wedding Announcement</div>
         <div class="hero-names">정성권 &nbsp;|&nbsp; 신예슬</div>
         <div class="hero-date-location">2026년 11월 부모님만 모시고 조촐한 식사 자리를 가집니다.</div>
       </div>
     </section>
 
     <section>
-      <div class="section-title">INVITATION</div>
+      <div class="section-title">Celebrating Our Marriage</div>
       <div class="greeting-text">
         함께하는 소소한 일상 속에서<br>더 큰 행복을 찾아가는 두 사람이<br>이제 하나의 결실을 맺으려 합니다.<br><br>
         앞으로 귀여운 개와 고양이와 함께<br>따뜻한 온기를 나누며 살겠습니다.<br>시간이 날 때마다 코트 위에서 신나게 테니스도 치며,<br>건강하고 활기찬 매일을 가꾸어 가겠습니다.<br><br>
@@ -151,13 +153,13 @@
         <div class="gallery-item"><img src="DSC01570.JPG" alt="16번 사진"></div>
         <div class="gallery-item"><img src="DSC01576.JPG" alt="17번 사진"></div>
         
-        <div class="gallery-item full-width"><img src="DSC01805.JPG" alt="18번 사진"></div>
-        <div class="gallery-item full-width"><img src="DSC01846.JPG" alt="19번 사진"></div>
+        <!-- 18, 19번째 사진을 작게 (기본 크기), 빈칸 방지를 위해 20번째를 크게 마무리 -->
+        <div class="gallery-item"><img src="DSC01805.JPG" alt="18번 사진"></div>
+        <div class="gallery-item"><img src="DSC01846.JPG" alt="19번 사진"></div>
         <div class="gallery-item full-width"><img src="DSC01886.JPG" alt="20번 사진"></div>
       </div>
     </section>
 
-    <!-- 계좌 섹션 -->
     <section style="border-bottom: none;">
       <div class="section-title">ACCOUNT</div>
       <div style="font-size: 14px; color: var(--text-sub); line-height: 1.8; margin-bottom: 20px;">
@@ -218,7 +220,6 @@
   </div>
 
   <script>
-    // 아코디언
     function toggleAccordion(id) {
       const content = document.getElementById(id);
       const arrow = document.getElementById('arrow-' + id);
@@ -229,7 +230,6 @@
       }
     }
 
-    // 복사
     function copyAccount(text) {
       navigator.clipboard.writeText(text).then(() => { showToast(); }).catch(err => {
         const textarea = document.createElement('textarea'); textarea.value = text;
@@ -238,13 +238,11 @@
       });
     }
 
-    // 토스트
     function showToast() {
       const toast = document.getElementById('toast'); toast.classList.add('show');
       setTimeout(() => { toast.classList.remove('show'); }, 2000);
     }
 
-    // 사진 클릭 확대 (모달) 기능
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("expandedImg");
     const galleryImages = document.querySelectorAll(".gallery-item img");
