@@ -3,15 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  
-  <!-- 검색 엔진 노출 차단 -->
   <meta name="robots" content="noindex, nofollow, noarchive">
   <meta name="googlebot" content="noindex, nofollow">
-
-  <!-- 카카오톡 / SNS 링크 공유 미리보기 -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="정성권 ❤️ 신예슬 모바일 청첩장">
-  <meta property="og:description" content="2026년 11월 13일 금요일 낮 12시 | 롯데호텔 서울 피에르 가니에르">
+  <meta property="og:description" content="2026년 11월 부모님만 모시고 조촐한 식사 자리를 가집니다.">
   <meta property="og:image" content="DSC01187.JPG">
 
   <title>정성권 ❤️ 신예슬 모바일 청첩장</title>
@@ -32,26 +28,12 @@
       --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       --font-en: 'Montserrat', sans-serif;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background-color: #EFECE6;
-      font-family: var(--font-serif);
-      color: var(--text-main);
-      display: flex; justify-content: center; align-items: center;
-      min-height: 100vh; -webkit-font-smoothing: antialiased;
-    }
-    .mobile-container {
-      width: 100%; max-width: 430px; background-color: var(--bg-color);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); position: relative; overflow: hidden;
-    }
+    body { background-color: #EFECE6; font-family: var(--font-serif); color: var(--text-main); display: flex; justify-content: center; align-items: center; min-height: 100vh; -webkit-font-smoothing: antialiased; }
+    .mobile-container { width: 100%; max-width: 430px; background-color: var(--bg-color); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); position: relative; overflow: hidden; }
     section { padding: 60px 24px; text-align: center; border-bottom: 1px solid rgba(232, 226, 220, 0.5); }
-    .section-title {
-      font-family: var(--font-en); font-size: 13px; letter-spacing: 4px;
-      color: var(--accent-color); text-transform: uppercase; margin-bottom: 24px; font-weight: 500;
-    }
+    .section-title { font-family: var(--font-en); font-size: 13px; letter-spacing: 4px; color: var(--accent-color); text-transform: uppercase; margin-bottom: 24px; font-weight: 500; }
 
-    /* Hero */
     .hero { padding: 0; position: relative; }
     .hero-image-wrapper { width: 100%; height: 480px; overflow: hidden; position: relative; }
     .hero-image-wrapper img { width: 100%; height: 100%; object-fit: cover; }
@@ -60,40 +42,24 @@
     .hero-names { font-size: 24px; font-weight: 400; letter-spacing: 2px; margin-bottom: 20px; color: var(--text-main); }
     .hero-date-location { font-size: 14px; color: var(--text-sub); line-height: 1.8; font-weight: 300; }
 
-    /* Greeting */
     .greeting-text { font-size: 14.5px; line-height: 2.1; color: var(--text-main); font-weight: 300; word-break: keep-all; }
     .greeting-highlight { margin-top: 24px; padding-top: 24px; border-top: 1px dashed var(--light-border); color: var(--accent-color); font-size: 14px; line-height: 1.9; }
     .couple-names-block { margin-top: 36px; font-size: 16px; line-height: 2; }
     .couple-names-block strong { font-weight: 500; }
     .greeting-sub-image { width: 100%; border-radius: 4px; margin-top: 32px; object-fit: cover; }
 
-    /* Details */
     .detail-card { background: var(--card-bg); padding: 30px 20px; border-radius: 8px; border: 1px solid var(--light-border); }
     .detail-item { margin-bottom: 20px; }
     .detail-item:last-child { margin-bottom: 0; }
     .detail-label { font-family: var(--font-en); font-size: 11px; letter-spacing: 2px; color: var(--accent-color); margin-bottom: 6px; }
-    .detail-val { font-size: 16px; font-weight: 400; color: var(--text-main); }
-    .detail-sub { font-size: 13.5px; color: var(--text-sub); margin-top: 8px; }
+    .detail-val { font-size: 16px; font-weight: 400; color: var(--text-main); line-height: 1.5; }
 
-    /* Gallery */
     .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-    .gallery-item { position: relative; width: 100%; padding-top: 133%; overflow: hidden; border-radius: 4px; background-color: #E8E2DC; }
-    .gallery-item img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+    .gallery-item { position: relative; width: 100%; padding-top: 133%; overflow: hidden; border-radius: 4px; background-color: #E8E2DC; cursor: pointer; }
+    .gallery-item img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+    .gallery-item.full-width { grid-column: span 2; padding-top: 0; height: auto; }
+    .gallery-item.full-width img { position: static; width: 100%; height: auto; display: block; }
     
-    /* 🔴 수정된 부분: 크게 들어가는 세로 사진이 안 잘리게 원본 비율 유지 */
-    .gallery-item.full-width { 
-      grid-column: span 2; 
-      padding-top: 0; /* 강제 비율 삭제 */
-      height: auto; 
-    }
-    .gallery-item.full-width img { 
-      position: static; 
-      width: 100%; 
-      height: auto; /* 원본 세로 길이만큼 늘어남 */
-      display: block;
-    }
-
-    /* Account */
     .account-accordion { background: var(--card-bg); border-radius: 8px; border: 1px solid var(--light-border); overflow: hidden; margin-top: 16px; }
     .accordion-header { padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 14.5px; font-weight: 400; background-color: #FCFBF9; user-select: none; }
     .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; background-color: var(--card-bg); }
@@ -103,124 +69,101 @@
     .account-details .number { font-family: var(--font-sans); color: var(--text-sub); margin-top: 4px;}
     .copy-btn { padding: 6px 12px; font-size: 12px; font-family: var(--font-sans); background-color: var(--bg-color); border: 1px solid var(--light-border); border-radius: 4px; cursor: pointer; color: var(--text-main); }
 
-    /* Footer & Toast */
     footer { padding: 40px 20px; text-align: center; font-size: 12px; color: var(--accent-color); font-family: var(--font-en); letter-spacing: 2px; }
     .toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px); background-color: rgba(44, 42, 41, 0.9); color: #FFF; padding: 12px 24px; border-radius: 25px; font-size: 13px; font-family: var(--font-sans); opacity: 0; transition: all 0.3s ease; z-index: 1000; pointer-events: none; }
     .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+    /* 모달(사진 확대) CSS */
+    .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9); justify-content: center; align-items: center; flex-direction: column; }
+    .modal-content { margin: auto; display: block; max-width: 95%; max-height: 90vh; object-fit: contain; animation: zoom 0.3s ease; }
+    @keyframes zoom { from {transform:scale(0.9)} to {transform:scale(1)} }
+    .close-btn { position: absolute; top: 20px; right: 25px; color: #f1f1f1; font-size: 40px; font-weight: 300; cursor: pointer; font-family: var(--font-sans); }
   </style>
 </head>
 <body>
 
   <div class="mobile-container">
     
-    <!-- 1. 메인 섹션 -->
     <section class="hero">
-      <div class="hero-image-wrapper">
-        <img src="DSC01187.JPG" alt="메인 사진">
-      </div>
+      <div class="hero-image-wrapper"><img src="DSC01187.JPG" alt="메인 사진"></div>
       <div class="hero-text">
         <div class="hero-subtitle">WEDDING INVITATION</div>
         <div class="hero-names">정성권 &nbsp;|&nbsp; 신예슬</div>
-        <div class="hero-date-location">
-          2026년 11월 13일 금요일 낮 12:00<br>
-          롯데호텔 서울 피에르 가니에르
-        </div>
+        <div class="hero-date-location">2026년 11월 부모님만 모시고 조촐한 식사 자리를 가집니다.</div>
       </div>
     </section>
 
-    <!-- 2. 초대 인사말 섹션 -->
     <section>
       <div class="section-title">INVITATION</div>
       <div class="greeting-text">
-        함께하는 소소한 일상 속에서<br>
-        더 큰 행복을 찾아가는 두 사람이<br>
-        이제 하나의 결실을 맺으려 합니다.<br><br>
-        
-        앞으로 귀여운 개와 고양이와 함께<br>
-        따뜻한 온기를 나누며 살겠습니다.<br>
-        시간이 날 때마다 코트 위에서 신나게 테니스도 치며,<br>
-        건강하고 활기찬 매일을 가꾸어 가겠습니다.<br><br>
-
-        화려한 예식 대신 양가 가족분들을 모시고<br>
-        정성 어린 식사 한 끼를 나누며<br>
-        소박하지만 깊은 뜻을 새기고자 합니다.
+        함께하는 소소한 일상 속에서<br>더 큰 행복을 찾아가는 두 사람이<br>이제 하나의 결실을 맺으려 합니다.<br><br>
+        앞으로 귀여운 개와 고양이와 함께<br>따뜻한 온기를 나누며 살겠습니다.<br>시간이 날 때마다 코트 위에서 신나게 테니스도 치며,<br>건강하고 활기찬 매일을 가꾸어 가겠습니다.<br><br>
+        화려한 예식 대신 양가 가족분들을 모시고<br>정성 어린 식사 한 끼를 나누며<br>소박하지만 깊은 뜻을 새기고자 합니다.
       </div>
-
       <div class="greeting-highlight">
-        저희의 첫걸음을 곁에서 축복해 주시는<br>
-        가족분들의 따뜻한 마음을 잊지 않고<br>
-        서로 아끼며 행복하게 잘 살겠습니다.
+        저희의 첫걸음을 곁에서 축복해 주시는<br>가족분들의 따뜻한 마음을 잊지 않고<br>서로 아끼며 행복하게 잘 살겠습니다.
       </div>
-
       <div class="couple-names-block">
-        <div style="margin-bottom: 12px;">
-          <strong>정준철 · 임형선</strong> <span style="font-size: 14px; color: var(--text-sub);">의 아들</span> <strong>성권</strong>
-        </div>
-        <div>
-          <strong>신상호 · 송미숙</strong> <span style="font-size: 14px; color: var(--text-sub);">의 딸</span> <strong>예슬</strong>
-        </div>
+        <div style="margin-bottom: 12px;"><strong>정준철 · 임형선</strong> <span style="font-size: 14px; color: var(--text-sub);">의 아들</span> <strong>성권</strong></div>
+        <div><strong>신상호 · 송미숙</strong> <span style="font-size: 14px; color: var(--text-sub);">의 딸</span> <strong>예슬</strong></div>
       </div>
-
       <img src="DSC01576.JPG" alt="인사말 사진" class="greeting-sub-image">
     </section>
 
-    <!-- 3. 예식 안내 섹션 -->
     <section>
       <div class="section-title">DATE & VENUE</div>
       <div class="detail-card">
         <div class="detail-item">
           <div class="detail-label">DATE</div>
-          <div class="detail-val">2026년 11월 13일 금요일</div>
-          <div class="detail-sub">낮 12:00 (정오)</div>
+          <div class="detail-val">2026년 11월</div>
         </div>
         <hr style="border: 0; border-top: 1px solid var(--light-border); margin: 20px 0;">
         <div class="detail-item">
           <div class="detail-label">LOCATION</div>
-          <div class="detail-val">롯데호텔 서울 피에르 가니에르</div>
-          <div class="detail-sub">가족분들만 모시고 조촐한 식사 자리를 가집니다.</div>
+          <div class="detail-val" style="font-size: 14.5px;">11월 부모님만 모시고<br>조촐한 식사 자리를 가집니다.</div>
         </div>
       </div>
     </section>
 
-    <!-- 4. 20장 갤러리 섹션 -->
     <section>
       <div class="section-title">GALLERY</div>
+      <div style="font-size: 12px; color: var(--text-sub); margin-bottom: 16px;">사진을 터치하시면 크게 볼 수 있습니다.</div>
       <div class="gallery-grid">
-        <div class="gallery-item full-width"><img src="DSC01187.JPG" alt="사진"></div>
-        <div class="gallery-item"><img src="DSC00677.JPG" alt="사진"></div>
-        <div class="gallery-item"><img src="DSC00689.JPG" alt="사진"></div>
-        <div class="gallery-item"><img src="DSC00746.JPG" alt="사진"></div>
+        <div class="gallery-item full-width"><img src="DSC01187.JPG" alt="1번 사진"></div>
+        <div class="gallery-item"><img src="DSC00677.JPG" alt="2번 사진"></div>
+        <div class="gallery-item"><img src="DSC00689.JPG" alt="3번 사진"></div>
+        <div class="gallery-item"><img src="DSC00746.JPG" alt="4번 사진"></div>
+        <div class="gallery-item"><img src="DSC00772.JPG" alt="5번 사진"></div>
         
-        <div class="gallery-item"><img src="DSC00772.JPG" alt="사진"></div>
-        <div class="gallery-item full-width"><img src="DSC00834.JPG" alt="사진"></div>
-        <div class="gallery-item"><img src="DSC00938.JPG" alt="사진"></div>
-        <div class="gallery-item"><img src="DSC00941.JPG" alt="사진"></div>
+        <div class="gallery-item full-width"><img src="DSC00834.JPG" alt="6번 사진"></div>
+        <div class="gallery-item"><img src="DSC00938.JPG" alt="7번 사진"></div>
+        <div class="gallery-item"><img src="DSC00941.JPG" alt="8번 사진"></div>
         
-        <div class="gallery-item"><img src="DSC01042.JPG" alt="사진"></div>
-        <div class="gallery-item"><img src="DSC01068.JPG" alt="사진"></div>
-        <div class="gallery-item full-width"><img src="DSC01210.JPG" alt="사진"></div>
-        <div class="gallery-item"><img src="DSC01247.JPG" alt="사진"></div>
+        <div class="gallery-item full-width"><img src="DSC01042.JPG" alt="9번 사진"></div>
+        <div class="gallery-item"><img src="DSC01068.JPG" alt="10번 사진"></div>
+        <div class="gallery-item"><img src="DSC01210.JPG" alt="11번 사진"></div>
         
-        <div class="gallery-item"><img src="DSC01258.JPG" alt="사진"></div>
-        <div class="gallery-item"><img src="DSC01270.JPG" alt="사진"></div>
-        <div class="gallery-item full-width"><img src="DSC01517.JPG" alt="사진"></div>
-        <div class="gallery-item"><img src="DSC01570.JPG" alt="사진"></div>
+        <div class="gallery-item full-width"><img src="DSC01247.JPG" alt="12번 사진"></div>
+        <div class="gallery-item"><img src="DSC01258.JPG" alt="13번 사진"></div>
+        <div class="gallery-item"><img src="DSC01270.JPG" alt="14번 사진"></div>
         
-        <div class="gallery-item"><img src="DSC01576.JPG" alt="사진"></div>
-        <div class="gallery-item"><img src="DSC01805.JPG" alt="사진"></div>
-        <div class="gallery-item"><img src="DSC01846.JPG" alt="사진"></div>
-        <div class="gallery-item"><img src="DSC01886.JPG" alt="사진"></div>
+        <div class="gallery-item full-width"><img src="DSC01517.JPG" alt="15번 사진"></div>
+        <div class="gallery-item"><img src="DSC01570.JPG" alt="16번 사진"></div>
+        <div class="gallery-item"><img src="DSC01576.JPG" alt="17번 사진"></div>
+        
+        <div class="gallery-item full-width"><img src="DSC01805.JPG" alt="18번 사진"></div>
+        <div class="gallery-item full-width"><img src="DSC01846.JPG" alt="19번 사진"></div>
+        <div class="gallery-item full-width"><img src="DSC01886.JPG" alt="20번 사진"></div>
       </div>
     </section>
 
-    <!-- 5. 마음 전하실 곳 섹션 -->
+    <!-- 계좌 섹션 -->
     <section style="border-bottom: none;">
       <div class="section-title">ACCOUNT</div>
       <div style="font-size: 14px; color: var(--text-sub); line-height: 1.8; margin-bottom: 20px;">
         축복해 주시는 따뜻한 마음 감사히 보관하겠습니다.
       </div>
 
-      <!-- 신랑측 어머니 계좌 -->
       <div class="account-accordion">
         <div class="accordion-header" onclick="toggleAccordion('acc1')">
           <span>신랑측 마음 전하실 곳</span>
@@ -232,12 +175,18 @@
               <div class="bank">SC제일은행 (임형선)</div>
               <div class="number">251-20-264046</div>
             </div>
-            <button class="copy-btn" onclick="copyAccount('SC제일은행 251-20-264046')">복사</button>
+            <button class="copy-btn" onclick="copyAccount('SC제일은행 25120264046')">복사</button>
+          </div>
+          <div class="account-box">
+            <div class="account-details">
+              <div class="bank">농협 (정준철)</div>
+              <div class="number">352-6260-8731-83</div>
+            </div>
+            <button class="copy-btn" onclick="copyAccount('농협 3526260873183')">복사</button>
           </div>
         </div>
       </div>
 
-      <!-- 신부측 어머니 계좌 -->
       <div class="account-accordion">
         <div class="accordion-header" onclick="toggleAccordion('acc2')">
           <span>신부측 마음 전하실 곳</span>
@@ -262,38 +211,53 @@
 
   <div id="toast" class="toast">계좌번호가 복사되었습니다.</div>
 
+  <!-- 모달 창 (사진 클릭 시 확대) -->
+  <div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close-btn">&times;</span>
+    <img class="modal-content" id="expandedImg">
+  </div>
+
   <script>
+    // 아코디언
     function toggleAccordion(id) {
       const content = document.getElementById(id);
       const arrow = document.getElementById('arrow-' + id);
-      
       if (content.style.maxHeight && content.style.maxHeight !== '0px') {
-        content.style.maxHeight = '0px';
-        arrow.textContent = '▼';
+        content.style.maxHeight = '0px'; arrow.textContent = '▼';
       } else {
-        content.style.maxHeight = content.scrollHeight + 'px';
-        arrow.textContent = '▲';
+        content.style.maxHeight = content.scrollHeight + 'px'; arrow.textContent = '▲';
       }
     }
 
+    // 복사
     function copyAccount(text) {
-      navigator.clipboard.writeText(text).then(() => {
-        showToast();
-      }).catch(err => {
-        const textarea = document.createElement('textarea');
-        textarea.value = text;
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
-        showToast();
+      navigator.clipboard.writeText(text).then(() => { showToast(); }).catch(err => {
+        const textarea = document.createElement('textarea'); textarea.value = text;
+        document.body.appendChild(textarea); textarea.select(); document.execCommand('copy');
+        document.body.removeChild(textarea); showToast();
       });
     }
 
+    // 토스트
     function showToast() {
-      const toast = document.getElementById('toast');
-      toast.classList.add('show');
+      const toast = document.getElementById('toast'); toast.classList.add('show');
       setTimeout(() => { toast.classList.remove('show'); }, 2000);
+    }
+
+    // 사진 클릭 확대 (모달) 기능
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("expandedImg");
+    const galleryImages = document.querySelectorAll(".gallery-item img");
+
+    galleryImages.forEach(img => {
+      img.onclick = function() {
+        modal.style.display = "flex";
+        modalImg.src = this.src;
+      }
+    });
+
+    function closeModal() {
+      modal.style.display = "none";
     }
   </script>
 </body>
